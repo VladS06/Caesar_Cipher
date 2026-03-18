@@ -56,6 +56,10 @@ void compute_histogram(const char* text, double histogram[ALPHABET_SIZE]) {
             histogram[*text - 'a']++;
             len++;
         }
+        else if (*text >= 'A' && *text <= 'Z') {
+            histogram[*text - 'A']++;
+            len++;
+        }
         text++;
     }
 
