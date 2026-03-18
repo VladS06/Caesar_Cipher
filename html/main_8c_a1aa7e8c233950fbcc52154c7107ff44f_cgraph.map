@@ -1,0 +1,9 @@
+<map id="break_caesar_cipher" name="break_caesar_cipher">
+<area shape="rect" id="Node000001" title="Breaks a Caesar cipher by testing all shifts and comparing frequency distributions." alt="" coords="5,55,147,80"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#aedaa2b62cc091ba4e2b54adc0bcdbc1a" title="Computes the normalized frequency histogram of lowercase letters in a text." alt="" coords="195,5,330,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,52,199,34,194,37,128,57"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#ace401e6e59af27a274ccf31789b68369" title="Reads the standard English letter distribution from a file." alt="" coords="204,55,320,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="147,65,191,67,186,68,148,70"/>
+<area shape="rect" id="Node000004" href="$main_8c.html#af901f9f92ae6355a45ccc05587ecb7b1" title="Shifts a histogram array by a specific amount, wrapping around the alphabet." alt="" coords="207,104,318,130"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="128,78,199,99,194,100,127,84"/>
+</map>

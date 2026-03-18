@@ -1,0 +1,10 @@
+<map id="compute_histogram" name="compute_histogram">
+<area shape="rect" id="Node000001" title="Computes the normalized frequency histogram of lowercase letters in a text." alt="" coords="378,31,514,56"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#a1aa7e8c233950fbcc52154c7107ff44f" title="Breaks a Caesar cipher by testing all shifts and comparing frequency distributions." alt="" coords="189,5,330,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="360,32,331,30,331,25,366,32"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#a5df2dc5db49e049cb36f02e4ea39b199" title="Encrypts a string in&#45;place using a Caesar cipher." alt="" coords="103,31,141,56"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="363,46,142,46,141,41,363,41"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="176,34,142,43,141,37,171,34"/>
+<area shape="rect" id="Node000004" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="Entry point of the application." alt="" coords="5,31,55,56"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="84,44,55,46,55,41,89,43"/>
+</map>

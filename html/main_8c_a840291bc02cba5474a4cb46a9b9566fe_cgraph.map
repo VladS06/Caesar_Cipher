@@ -1,0 +1,33 @@
+<map id="main" name="main">
+<area shape="rect" id="Node000001" title="Entry point of the application." alt="" coords="5,233,55,259"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#a5df2dc5db49e049cb36f02e4ea39b199" title="Encrypts a string in&#45;place using a Caesar cipher." alt="" coords="103,233,141,259"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="54,244,89,244,85,248,57,249"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#a1aa7e8c233950fbcc52154c7107ff44f" title="Breaks a Caesar cipher by testing all shifts and comparing frequency distributions." alt="" coords="203,60,344,86"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="123,232,129,204,141,167,160,128,187,95,194,92,191,96,191,99,164,131,146,169,134,205,128,234"/>
+<area shape="rect" id="Node000004" href="$main_8c.html#aedaa2b62cc091ba4e2b54adc0bcdbc1a" title="Computes the normalized frequency histogram of lowercase letters in a text." alt="" coords="405,11,541,36"/>
+<area shape="poly" id="edge7_Node000002_Node000004" title=" " alt="" coords="120,232,122,195,131,143,151,90,167,66,187,46,210,31,234,19,287,6,340,3,392,7,387,10,340,8,288,12,236,24,213,35,191,50,171,69,156,92,136,145,128,195,126,233"/>
+<area shape="rect" id="Node000007" href="$main_8c.html#a69e48d421f6d0fe2798a19a1252fac62" title="Computes the Chi&#45;square distance between two frequency histograms." alt="" coords="200,109,347,135"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="126,232,148,189,166,165,187,144,196,141,193,144,191,148,170,168,153,192,131,234"/>
+<area shape="rect" id="Node000008" href="$main_8c.html#ae2c8216d4cc3f2acc752b6becc7a0210" title="Computes the Cosine distance between two frequency histograms." alt="" coords="216,159,331,184"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="135,231,159,212,188,193,203,188,199,192,190,198,162,216,139,235"/>
+<area shape="rect" id="Node000009" href="$main_8c.html#a893f54b77036df187b34702e68d92827" title="Decrypts a Caesar cipher string in&#45;place given a known shift." alt="" coords="210,208,337,234"/>
+<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="140,241,196,233,192,236,143,246"/>
+<area shape="rect" id="Node000011" href="$main_8c.html#a102f0b077199e0231514468a0fd45eb7" title="Encrypts a string in&#45;place using a Caesar cipher." alt="" coords="210,257,337,283"/>
+<area shape="poly" id="edge11_Node000002_Node000011" title=" " alt="" coords="141,247,196,256,192,259,142,252"/>
+<area shape="rect" id="Node000012" href="$main_8c.html#a9ad23485c26e8007f42ad0468278d780" title="Computes the Euclidean distance between two frequency histograms." alt="" coords="207,307,339,332"/>
+<area shape="poly" id="edge13_Node000002_Node000012" title=" " alt="" coords="138,257,163,276,190,293,204,300,198,302,188,298,160,280,138,262"/>
+<area shape="rect" id="Node000013" href="$main_8c.html#ae91d4cbee2dab64187187499dd0eecd4" title="Prints the main menu options to the console." alt="" coords="231,356,316,382"/>
+<area shape="poly" id="edge14_Node000002_Node000013" title=" " alt="" coords="129,257,153,300,170,323,191,343,218,358,213,359,188,347,166,327,148,303,128,262"/>
+<area shape="rect" id="Node000014" href="$main_8c.html#a522922cb80c4634119458a0d9109b26a" title="Reads the first line of text from a specified file." alt="" coords="207,405,339,431"/>
+<area shape="poly" id="edge15_Node000002_Node000014" title=" " alt="" coords="126,257,134,287,146,323,164,360,191,392,196,398,191,398,187,396,160,363,141,325,129,288,125,262"/>
+<area shape="rect" id="Node000015" href="$main_8c.html#aea0e89be7bcdd1631fc28b7de8027d76" title="Safely reads a string with spaces from the standard input." alt="" coords="189,455,357,480"/>
+<area shape="poly" id="edge16_Node000002_Node000015" title=" " alt="" coords="124,257,130,296,139,345,159,397,173,421,191,442,194,447,189,445,187,445,169,424,154,399,134,346,124,296,123,262"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="327,57,405,39,401,42,330,62"/>
+<area shape="rect" id="Node000005" href="$main_8c.html#ace401e6e59af27a274ccf31789b68369" title="Reads the standard English letter distribution from a file." alt="" coords="415,60,531,86"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="343,70,402,72,397,74,345,75"/>
+<area shape="rect" id="Node000006" href="$main_8c.html#af901f9f92ae6355a45ccc05587ecb7b1" title="Shifts a histogram array by a specific amount, wrapping around the alphabet." alt="" coords="418,109,528,135"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="328,84,406,104,401,106,329,89"/>
+<area shape="rect" id="Node000010" href="$main_8c.html#a28a3256764465273a4937050c29f4bda" title="Core Caesar cipher shift function (used for both encryption and decryption)." alt="" coords="441,232,505,258"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="337,226,428,238,423,240,338,231"/>
+<area shape="poly" id="edge12_Node000011_Node000010" title=" " alt="" coords="337,260,428,250,423,252,338,265"/>
+</map>

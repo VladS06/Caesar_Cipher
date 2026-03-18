@@ -1,0 +1,519 @@
+\doxysection{main.\+c File Reference}
+\hypertarget{main_8c}{}\label{main_8c}\index{main.c@{main.c}}
+
+
+A comprehensive utility for encrypting, decrypting, and breaking Caesar Ciphers.  
+
+
+{\ttfamily \+\#include $<$math.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdio.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \+\#include $<$string.\+h$>$}\newline
+{\ttfamily \+\#include "{}tests.\+h"{}}\newline
+Include dependency graph for main.\+c:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{main_8c_a6572f1706059832f94025fa12c6c45ed}\label{main_8c_a6572f1706059832f94025fa12c6c45ed} 
+\+\#define {\bfseries ALPHABET\+\_\+\+SIZE}~26
+\item 
+\Hypertarget{main_8c_abc29bd331bb97f02ae2320419301b88c}\label{main_8c_abc29bd331bb97f02ae2320419301b88c} 
+\+\#define {\bfseries TOP\+\_\+N}~3
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{main_8c_ace401e6e59af27a274ccf31789b68369}{read\+\_\+distribution}} (const char \texorpdfstring{$\ast$}{*}filename, double distribution\+[ALPHABET\+\_\+\+SIZE]\+)
+\begin{DoxyCompactList}\small\item\em Reads the standard English letter distribution from a file. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{main_8c_aedaa2b62cc091ba4e2b54adc0bcdbc1a}{compute\+\_\+histogram}} (const char \texorpdfstring{$\ast$}{*}text, double histogram\+[ALPHABET\+\_\+\+SIZE]\+)
+\begin{DoxyCompactList}\small\item\em Computes the normalized frequency histogram of lowercase letters in a text. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{main_8c_a69e48d421f6d0fe2798a19a1252fac62}{chi\+\_\+squared\+\_\+distance}} (const double hist1\+[ALPHABET\+\_\+\+SIZE]\+, const double hist2\+[ALPHABET\+\_\+\+SIZE]\+)
+\begin{DoxyCompactList}\small\item\em Computes the Chi-\/square distance between two frequency histograms. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{main_8c_ae2c8216d4cc3f2acc752b6becc7a0210}{cosine\+\_\+distance}} (const double hist1\+[ALPHABET\+\_\+\+SIZE]\+, const double hist2\+[ALPHABET\+\_\+\+SIZE]\+)
+\begin{DoxyCompactList}\small\item\em Computes the Cosine distance between two frequency histograms. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{main_8c_a9ad23485c26e8007f42ad0468278d780}{euclidean\+\_\+distance}} (const double hist1\+[ALPHABET\+\_\+\+SIZE]\+, const double hist2\+[ALPHABET\+\_\+\+SIZE]\+)
+\begin{DoxyCompactList}\small\item\em Computes the Euclidean distance between two frequency histograms. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{main_8c_af901f9f92ae6355a45ccc05587ecb7b1}{shift\+\_\+histogram}} (const double original\+[ALPHABET\+\_\+\+SIZE]\+, double shifted\+[ALPHABET\+\_\+\+SIZE]\+, int shift)
+\begin{DoxyCompactList}\small\item\em Shifts a histogram array by a specific amount, wrapping around the alphabet. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{main_8c_a1aa7e8c233950fbcc52154c7107ff44f}{break\+\_\+caesar\+\_\+cipher}} (const char \texorpdfstring{$\ast$}{*}text, int top\+\_\+shifts\+[TOP\+\_\+N]\+, double top\+\_\+distances\+[TOP\+\_\+N]\+, double(\texorpdfstring{$\ast$}{*}distance\+\_\+function)(const double\+[$\,$]\+, const double\+[$\,$]\+))
+\begin{DoxyCompactList}\small\item\em Breaks a Caesar cipher by testing all shifts and comparing frequency distributions. \end{DoxyCompactList}\item 
+\Hypertarget{main_8c_ae91d4cbee2dab64187187499dd0eecd4}\label{main_8c_ae91d4cbee2dab64187187499dd0eecd4} 
+void {\bfseries print\+\_\+menu} ()
+\begin{DoxyCompactList}\small\item\em Prints the main menu options to the console. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{main_8c_aea0e89be7bcdd1631fc28b7de8027d76}{read\+\_\+text\+\_\+from\+\_\+keyboard}} (char \texorpdfstring{$\ast$}{*}str)
+\begin{DoxyCompactList}\small\item\em Safely reads a string with spaces from the standard input. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{main_8c_a522922cb80c4634119458a0d9109b26a}{read\+\_\+text\+\_\+from\+\_\+file}} (char \texorpdfstring{$\ast$}{*}str, const char \texorpdfstring{$\ast$}{*}filename)
+\begin{DoxyCompactList}\small\item\em Reads the first line of text from a specified file. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{main_8c_a28a3256764465273a4937050c29f4bda}{encrypt}} (char message\+[$\,$]\+, int offset)
+\begin{DoxyCompactList}\small\item\em Core Caesar cipher shift function (used for both encryption and decryption). \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{main_8c_a102f0b077199e0231514468a0fd45eb7}{encrypt\+\_\+with\+\_\+shift}} (char \texorpdfstring{$\ast$}{*}str, const int shift)
+\begin{DoxyCompactList}\small\item\em Encrypts a string in-\/place using a Caesar cipher. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{main_8c_a893f54b77036df187b34702e68d92827}{decrypt\+\_\+with\+\_\+shift}} (char \texorpdfstring{$\ast$}{*}str, const int shift)
+\begin{DoxyCompactList}\small\item\em Decrypts a Caesar cipher string in-\/place given a known shift. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{main_8c_a5df2dc5db49e049cb36f02e4ea39b199}{UI}} ()
+\begin{DoxyCompactList}\small\item\em Encrypts a string in-\/place using a Caesar cipher. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em Entry point of the application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A comprehensive utility for encrypting, decrypting, and breaking Caesar Ciphers. 
+
+
+\begin{DoxyItemize}
+\item This program allows users to manipulate text using the Caesar cipher and utilizes frequency analysis to break unknown ciphers. It supports three distance metrics to compare letter distributions:\+
+\item \begin{DoxyNote}{Note}
+Analysis Summary:\+
+\end{DoxyNote}
+
+\item Chi-\/\+Squared is the most accurate overall metric because it correctly weights the importance of common letters over rare ones, making it reliable even for shorter texts.
+\item Cosine distance performs best on very long texts by matching the overall geometric shape of the frequency distribution.
+\item Euclidean distance is the weakest and most fragile metric, as it treats all frequency deviations equally and is easily broken by short or anomalous texts. 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{main_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8c_a1aa7e8c233950fbcc52154c7107ff44f}\index{main.c@{main.c}!break\_caesar\_cipher@{break\_caesar\_cipher}}
+\index{break\_caesar\_cipher@{break\_caesar\_cipher}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{break\_caesar\_cipher()}{break\_caesar\_cipher()}}
+{\footnotesize\ttfamily \label{main_8c_a1aa7e8c233950fbcc52154c7107ff44f} 
+void break\+\_\+caesar\+\_\+cipher (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{text}{, }\item[{int}]{top\+\_\+shifts}{\+[\+TOP\+\_\+\+N]\+, }\item[{double}]{top\+\_\+distances}{\+[\+TOP\+\_\+\+N]\+, }\item[{double(\texorpdfstring{$\ast$}{*}}]{distance\+\_\+function~}{)(const double\+[$\,$]\+, const double\+[$\,$]\+)}\end{DoxyParamCaption})}
+
+
+
+Breaks a Caesar cipher by testing all shifts and comparing frequency distributions. 
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Parameters}
+{\em text} & The encrypted message to decrypt. \\
+\hline
+{\em top\+\_\+shifts} & Output array storing the three most likely shift values. \\
+\hline
+{\em top\+\_\+distances} & Output array storing the corresponding distance scores for those shifts. \\
+\hline
+{\em distance\+\_\+function} & A pointer to the specific distance metric function to use. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}Here is the call graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{main_8c_a1aa7e8c233950fbcc52154c7107ff44f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{main_8c_a1aa7e8c233950fbcc52154c7107ff44f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_a69e48d421f6d0fe2798a19a1252fac62}\index{main.c@{main.c}!chi\_squared\_distance@{chi\_squared\_distance}}
+\index{chi\_squared\_distance@{chi\_squared\_distance}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{chi\_squared\_distance()}{chi\_squared\_distance()}}
+{\footnotesize\ttfamily \label{main_8c_a69e48d421f6d0fe2798a19a1252fac62} 
+double chi\+\_\+squared\+\_\+distance (\begin{DoxyParamCaption}\item[{const double}]{hist1}{\+[\+ALPHABET\+\_\+\+SIZE]\+, }\item[{const double}]{hist2}{\+[\+ALPHABET\+\_\+\+SIZE]\+}\end{DoxyParamCaption})}
+
+
+
+Computes the Chi-\/square distance between two frequency histograms. 
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Parameters}
+{\em hist1} & The expected distribution array (standard English frequencies). \\
+\hline
+{\em hist2} & The observed distribution array (the text being analyzed). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The calculated Chi-\/square distance. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{main_8c_a69e48d421f6d0fe2798a19a1252fac62_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_aedaa2b62cc091ba4e2b54adc0bcdbc1a}\index{main.c@{main.c}!compute\_histogram@{compute\_histogram}}
+\index{compute\_histogram@{compute\_histogram}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{compute\_histogram()}{compute\_histogram()}}
+{\footnotesize\ttfamily \label{main_8c_aedaa2b62cc091ba4e2b54adc0bcdbc1a} 
+void compute\+\_\+histogram (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{text}{, }\item[{double}]{histogram}{\+[\+ALPHABET\+\_\+\+SIZE]\+}\end{DoxyParamCaption})}
+
+
+
+Computes the normalized frequency histogram of lowercase letters in a text. 
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Parameters}
+{\em text} & The input string to analyze. \\
+\hline
+{\em histogram} & Array where the calculated frequencies of each letter will be stored. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_aedaa2b62cc091ba4e2b54adc0bcdbc1a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_ae2c8216d4cc3f2acc752b6becc7a0210}\index{main.c@{main.c}!cosine\_distance@{cosine\_distance}}
+\index{cosine\_distance@{cosine\_distance}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{cosine\_distance()}{cosine\_distance()}}
+{\footnotesize\ttfamily \label{main_8c_ae2c8216d4cc3f2acc752b6becc7a0210} 
+double cosine\+\_\+distance (\begin{DoxyParamCaption}\item[{const double}]{hist1}{\+[\+ALPHABET\+\_\+\+SIZE]\+, }\item[{const double}]{hist2}{\+[\+ALPHABET\+\_\+\+SIZE]\+}\end{DoxyParamCaption})}
+
+
+
+Computes the Cosine distance between two frequency histograms. 
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Parameters}
+{\em hist1} & The expected distribution array. \\
+\hline
+{\em hist2} & The observed distribution array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The calculated Cosine distance. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{main_8c_ae2c8216d4cc3f2acc752b6becc7a0210_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_a893f54b77036df187b34702e68d92827}\index{main.c@{main.c}!decrypt\_with\_shift@{decrypt\_with\_shift}}
+\index{decrypt\_with\_shift@{decrypt\_with\_shift}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{decrypt\_with\_shift()}{decrypt\_with\_shift()}}
+{\footnotesize\ttfamily \label{main_8c_a893f54b77036df187b34702e68d92827} 
+void decrypt\+\_\+with\+\_\+shift (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{str}{, }\item[{const int}]{shift}{}\end{DoxyParamCaption})}
+
+
+
+Decrypts a Caesar cipher string in-\/place given a known shift. 
+
+
+\begin{DoxyItemize}
+\item This function reverses the encryption process by passing the negative of the original shift to the core \doxylink{main_8c_a28a3256764465273a4937050c29f4bda}{encrypt()} function.
+\item 
+\begin{DoxyParams}{Parameters}
+{\em str} & The null-\/terminated string to decrypt. \\
+\hline
+{\em shift} & The number of positions characters were originally shifted forward. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}Here is the call graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{main_8c_a893f54b77036df187b34702e68d92827_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{main_8c_a893f54b77036df187b34702e68d92827_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_a28a3256764465273a4937050c29f4bda}\index{main.c@{main.c}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{encrypt()}{encrypt()}}
+{\footnotesize\ttfamily \label{main_8c_a28a3256764465273a4937050c29f4bda} 
+void encrypt (\begin{DoxyParamCaption}\item[{char}]{message}{\+[$\,$]\+, }\item[{int}]{offset}{}\end{DoxyParamCaption})}
+
+
+
+Core Caesar cipher shift function (used for both encryption and decryption). 
+
+
+\begin{DoxyItemize}
+\item Shifts alphabetical characters in the given message by the specified offset. It handles both uppercase and lowercase letters independently while leaving spaces, punctuation, and numbers untouched. It safely processes negative offsets and offsets greater than 26 using modulo arithmetic.
+\item 
+\begin{DoxyParams}{Parameters}
+{\em message} & The null-\/terminated string to be modified in-\/place. \\
+\hline
+{\em offset} & The number of positions to shift the characters (can be negative). \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a28a3256764465273a4937050c29f4bda_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_a102f0b077199e0231514468a0fd45eb7}\index{main.c@{main.c}!encrypt\_with\_shift@{encrypt\_with\_shift}}
+\index{encrypt\_with\_shift@{encrypt\_with\_shift}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{encrypt\_with\_shift()}{encrypt\_with\_shift()}}
+{\footnotesize\ttfamily \label{main_8c_a102f0b077199e0231514468a0fd45eb7} 
+void encrypt\+\_\+with\+\_\+shift (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{str}{, }\item[{const int}]{shift}{}\end{DoxyParamCaption})}
+
+
+
+Encrypts a string in-\/place using a Caesar cipher. 
+
+
+\begin{DoxyItemize}
+\item This function serves as a wrapper around the core \doxylink{main_8c_a28a3256764465273a4937050c29f4bda}{encrypt()} function, shifting all alphabetical characters forward by the given amount.
+\item 
+\begin{DoxyParams}{Parameters}
+{\em str} & The null-\/terminated string to encrypt. \\
+\hline
+{\em shift} & The number of positions to shift characters forward. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}Here is the call graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{main_8c_a102f0b077199e0231514468a0fd45eb7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{main_8c_a102f0b077199e0231514468a0fd45eb7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_a9ad23485c26e8007f42ad0468278d780}\index{main.c@{main.c}!euclidean\_distance@{euclidean\_distance}}
+\index{euclidean\_distance@{euclidean\_distance}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{euclidean\_distance()}{euclidean\_distance()}}
+{\footnotesize\ttfamily \label{main_8c_a9ad23485c26e8007f42ad0468278d780} 
+double euclidean\+\_\+distance (\begin{DoxyParamCaption}\item[{const double}]{hist1}{\+[\+ALPHABET\+\_\+\+SIZE]\+, }\item[{const double}]{hist2}{\+[\+ALPHABET\+\_\+\+SIZE]\+}\end{DoxyParamCaption})}
+
+
+
+Computes the Euclidean distance between two frequency histograms. 
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Parameters}
+{\em hist1} & The expected distribution array. \\
+\hline
+{\em hist2} & The observed distribution array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The calculated Euclidean distance. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{main_8c_a9ad23485c26e8007f42ad0468278d780_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8c_a840291bc02cba5474a4cb46a9b9566fe} 
+int main (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Entry point of the application. 
+
+
+\begin{DoxyItemize}
+\item \begin{DoxyReturn}{Returns}
+0 upon successful execution. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}Here is the call graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_ace401e6e59af27a274ccf31789b68369}\index{main.c@{main.c}!read\_distribution@{read\_distribution}}
+\index{read\_distribution@{read\_distribution}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{read\_distribution()}{read\_distribution()}}
+{\footnotesize\ttfamily \label{main_8c_ace401e6e59af27a274ccf31789b68369} 
+void read\+\_\+distribution (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{, }\item[{double}]{distribution}{\+[\+ALPHABET\+\_\+\+SIZE]\+}\end{DoxyParamCaption})}
+
+
+
+Reads the standard English letter distribution from a file. 
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Parameters}
+{\em filename} & The path to the file containing the frequency of letters. \\
+\hline
+{\em distribution} & Array where the normalized frequencies (0.\+0 to 1.\+0) will be stored. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_ace401e6e59af27a274ccf31789b68369_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_a522922cb80c4634119458a0d9109b26a}\index{main.c@{main.c}!read\_text\_from\_file@{read\_text\_from\_file}}
+\index{read\_text\_from\_file@{read\_text\_from\_file}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{read\_text\_from\_file()}{read\_text\_from\_file()}}
+{\footnotesize\ttfamily \label{main_8c_a522922cb80c4634119458a0d9109b26a} 
+void read\+\_\+text\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{str}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Reads the first line of text from a specified file. 
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Parameters}
+{\em str} & The buffer where the file\textquotesingle{}s content will be stored. \\
+\hline
+{\em filename} & The name of the file to read from. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{main_8c_a522922cb80c4634119458a0d9109b26a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_aea0e89be7bcdd1631fc28b7de8027d76}\index{main.c@{main.c}!read\_text\_from\_keyboard@{read\_text\_from\_keyboard}}
+\index{read\_text\_from\_keyboard@{read\_text\_from\_keyboard}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{read\_text\_from\_keyboard()}{read\_text\_from\_keyboard()}}
+{\footnotesize\ttfamily \label{main_8c_aea0e89be7bcdd1631fc28b7de8027d76} 
+void read\+\_\+text\+\_\+from\+\_\+keyboard (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{str}{}\end{DoxyParamCaption})}
+
+
+
+Safely reads a string with spaces from the standard input. 
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Parameters}
+{\em str} & The buffer where the input string will be stored. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{main_8c_aea0e89be7bcdd1631fc28b7de8027d76_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_af901f9f92ae6355a45ccc05587ecb7b1}\index{main.c@{main.c}!shift\_histogram@{shift\_histogram}}
+\index{shift\_histogram@{shift\_histogram}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{shift\_histogram()}{shift\_histogram()}}
+{\footnotesize\ttfamily \label{main_8c_af901f9f92ae6355a45ccc05587ecb7b1} 
+void shift\+\_\+histogram (\begin{DoxyParamCaption}\item[{const double}]{original}{\+[\+ALPHABET\+\_\+\+SIZE]\+, }\item[{double}]{shifted}{\+[\+ALPHABET\+\_\+\+SIZE]\+, }\item[{int}]{shift}{}\end{DoxyParamCaption})}
+
+
+
+Shifts a histogram array by a specific amount, wrapping around the alphabet. 
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Parameters}
+{\em original} & The base histogram to be shifted. \\
+\hline
+{\em shifted} & The output array where the shifted histogram is stored. \\
+\hline
+{\em shift} & The number of positions to shift the array. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_af901f9f92ae6355a45ccc05587ecb7b1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_a5df2dc5db49e049cb36f02e4ea39b199}\index{main.c@{main.c}!UI@{UI}}
+\index{UI@{UI}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{UI()}{UI()}}
+{\footnotesize\ttfamily \label{main_8c_a5df2dc5db49e049cb36f02e4ea39b199} 
+void UI (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Encrypts a string in-\/place using a Caesar cipher. 
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Parameters}
+{\em str} & The null-\/terminated string to encrypt. \\
+\hline
+{\em shift} & The number of positions to shift characters forward.\\
+\hline
+\end{DoxyParams}
+Drives the main user interface and handles user inputs. 
+\end{DoxyItemize}Here is the call graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a5df2dc5db49e049cb36f02e4ea39b199_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{main_8c_a5df2dc5db49e049cb36f02e4ea39b199_icgraph}
+\end{center}
+\end{figure}

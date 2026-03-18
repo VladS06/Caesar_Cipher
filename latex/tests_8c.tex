@@ -1,0 +1,178 @@
+\doxysection{tests.\+c File Reference}
+\hypertarget{tests_8c}{}\label{tests_8c}\index{tests.c@{tests.c}}
+{\ttfamily \+\#include $<$stdio.\+h$>$}\newline
+{\ttfamily \+\#include $<$string.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \+\#include "{}tests.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\+\#define \doxymbox{\hyperlink{tests_8c_aee1ca23fbaad2a555072bf1615aa525e}{FIRST\+\_\+\+TEST}}~\doxymbox{\hyperlink{tests_8c_a716b65215e232939d86854a987d9f1dba765cc5798ff41e35cb4af54c5fb4651e}{NON\+\_\+\+ALPHA}}
+\item 
+\+\#define \doxymbox{\hyperlink{tests_8c_a1735689453b728282e48c261b4332fd1}{MAXSCORE}}~36
+\item 
+\+\#define \doxymbox{\hyperlink{tests_8c_ad5aec52706898550b9c2bb08cb1b6f60}{CHARITY}}~10
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \doxymbox{\hyperlink{tests_8c_a716b65215e232939d86854a987d9f1db}{Test\+\_\+e}} \{ \newline
+\doxymbox{\hyperlink{tests_8c_a716b65215e232939d86854a987d9f1dba765cc5798ff41e35cb4af54c5fb4651e}{NON\+\_\+\+ALPHA}} = 0
+, \doxymbox{\hyperlink{tests_8c_a716b65215e232939d86854a987d9f1dba8ccca25c3d2c3613ce826fdfaadd6c72}{POSITIVE\+\_\+\+OFFSET}}
+, \doxymbox{\hyperlink{tests_8c_a716b65215e232939d86854a987d9f1dbae3e844f7cf459f0a9bc327fcfc9d0e3b}{NEGATIVE\+\_\+\+OFFSET}}
+, \doxymbox{\hyperlink{tests_8c_a716b65215e232939d86854a987d9f1dba1d7650c3883f02811f33e8fdbe948a86}{ALPHANUM}}
+, \newline
+\doxymbox{\hyperlink{tests_8c_a716b65215e232939d86854a987d9f1dba4a607e0f5219a7acd7ca7f8a0fc261b2}{ZERO\+\_\+\+OFFSET}}
+, \doxymbox{\hyperlink{tests_8c_a716b65215e232939d86854a987d9f1dba8d9aa9e51a5036bde524581e3d0ec46b}{MAX\+\_\+\+OFFSET}}
+, \doxymbox{\hyperlink{tests_8c_a716b65215e232939d86854a987d9f1dba6ed6cf3fa49ab4ed9ea20cd2b5d46170}{NUM\+\_\+\+TESTS}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{tests_8c_a28a3256764465273a4937050c29f4bda}{encrypt}} (char message\+[$\,$]\+, int offset)
+\begin{DoxyCompactList}\small\item\em Core Caesar cipher shift function (used for both encryption and decryption). \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{tests_8c_ac010f216462b153ec0fb7d53f4fa8a8d}{test\+Name}} (int test)
+\item 
+unsigned int \doxymbox{\hyperlink{tests_8c_a7e165eabf17ab214b721733d56b437aa}{run\+Test}} (int test, bool verbose)
+\item 
+void \doxymbox{\hyperlink{tests_8c_a39abd40f68d03c40857be1e74407efb9}{red}} ()
+\item 
+void \doxymbox{\hyperlink{tests_8c_ad20897c5c8bd47f5d4005989bead0e55}{reset}} ()
+\item 
+void \doxymbox{\hyperlink{tests_8c_a8cd0bfc09b2ad7021576958fd21a26ae}{run\+\_\+tests}} (bool verbose)
+\end{DoxyCompactItemize}
+
+
+\label{doc-define-members}
+\Hypertarget{tests_8c_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{tests_8c_ad5aec52706898550b9c2bb08cb1b6f60}\index{tests.c@{tests.c}!CHARITY@{CHARITY}}
+\index{CHARITY@{CHARITY}!tests.c@{tests.c}}
+\doxysubsubsection{\texorpdfstring{CHARITY}{CHARITY}}
+{\footnotesize\ttfamily \label{tests_8c_ad5aec52706898550b9c2bb08cb1b6f60} 
+\+\#define CHARITY~10}
+
+\Hypertarget{tests_8c_aee1ca23fbaad2a555072bf1615aa525e}\index{tests.c@{tests.c}!FIRST\_TEST@{FIRST\_TEST}}
+\index{FIRST\_TEST@{FIRST\_TEST}!tests.c@{tests.c}}
+\doxysubsubsection{\texorpdfstring{FIRST\_TEST}{FIRST\_TEST}}
+{\footnotesize\ttfamily \label{tests_8c_aee1ca23fbaad2a555072bf1615aa525e} 
+\+\#define FIRST\+\_\+\+TEST~\doxymbox{\hyperlink{tests_8c_a716b65215e232939d86854a987d9f1dba765cc5798ff41e35cb4af54c5fb4651e}{NON\+\_\+\+ALPHA}}}
+
+\Hypertarget{tests_8c_a1735689453b728282e48c261b4332fd1}\index{tests.c@{tests.c}!MAXSCORE@{MAXSCORE}}
+\index{MAXSCORE@{MAXSCORE}!tests.c@{tests.c}}
+\doxysubsubsection{\texorpdfstring{MAXSCORE}{MAXSCORE}}
+{\footnotesize\ttfamily \label{tests_8c_a1735689453b728282e48c261b4332fd1} 
+\+\#define MAXSCORE~36}
+
+
+
+\label{doc-enum-members}
+\Hypertarget{tests_8c_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{tests_8c_a716b65215e232939d86854a987d9f1db}\index{tests.c@{tests.c}!Test\_e@{Test\_e}}
+\index{Test\_e@{Test\_e}!tests.c@{tests.c}}
+\doxysubsubsection{\texorpdfstring{Test\_e}{Test\_e}}
+{\footnotesize\ttfamily \label{tests_8c_a716b65215e232939d86854a987d9f1db} 
+enum \doxymbox{\hyperlink{tests_8c_a716b65215e232939d86854a987d9f1db}{Test\+\_\+e}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NON\_ALPHA@{NON\_ALPHA}!tests.c@{tests.c}}
+\index{tests.c@{tests.c}!NON\_ALPHA@{NON\_ALPHA}}
+}\Hypertarget{tests_8c_a716b65215e232939d86854a987d9f1dba765cc5798ff41e35cb4af54c5fb4651e}\label{tests_8c_a716b65215e232939d86854a987d9f1dba765cc5798ff41e35cb4af54c5fb4651e} 
+NON\+\_\+\+ALPHA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{POSITIVE\_OFFSET@{POSITIVE\_OFFSET}!tests.c@{tests.c}}
+\index{tests.c@{tests.c}!POSITIVE\_OFFSET@{POSITIVE\_OFFSET}}
+}\Hypertarget{tests_8c_a716b65215e232939d86854a987d9f1dba8ccca25c3d2c3613ce826fdfaadd6c72}\label{tests_8c_a716b65215e232939d86854a987d9f1dba8ccca25c3d2c3613ce826fdfaadd6c72} 
+POSITIVE\+\_\+\+OFFSET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NEGATIVE\_OFFSET@{NEGATIVE\_OFFSET}!tests.c@{tests.c}}
+\index{tests.c@{tests.c}!NEGATIVE\_OFFSET@{NEGATIVE\_OFFSET}}
+}\Hypertarget{tests_8c_a716b65215e232939d86854a987d9f1dbae3e844f7cf459f0a9bc327fcfc9d0e3b}\label{tests_8c_a716b65215e232939d86854a987d9f1dbae3e844f7cf459f0a9bc327fcfc9d0e3b} 
+NEGATIVE\+\_\+\+OFFSET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALPHANUM@{ALPHANUM}!tests.c@{tests.c}}
+\index{tests.c@{tests.c}!ALPHANUM@{ALPHANUM}}
+}\Hypertarget{tests_8c_a716b65215e232939d86854a987d9f1dba1d7650c3883f02811f33e8fdbe948a86}\label{tests_8c_a716b65215e232939d86854a987d9f1dba1d7650c3883f02811f33e8fdbe948a86} 
+ALPHANUM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ZERO\_OFFSET@{ZERO\_OFFSET}!tests.c@{tests.c}}
+\index{tests.c@{tests.c}!ZERO\_OFFSET@{ZERO\_OFFSET}}
+}\Hypertarget{tests_8c_a716b65215e232939d86854a987d9f1dba4a607e0f5219a7acd7ca7f8a0fc261b2}\label{tests_8c_a716b65215e232939d86854a987d9f1dba4a607e0f5219a7acd7ca7f8a0fc261b2} 
+ZERO\+\_\+\+OFFSET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAX\_OFFSET@{MAX\_OFFSET}!tests.c@{tests.c}}
+\index{tests.c@{tests.c}!MAX\_OFFSET@{MAX\_OFFSET}}
+}\Hypertarget{tests_8c_a716b65215e232939d86854a987d9f1dba8d9aa9e51a5036bde524581e3d0ec46b}\label{tests_8c_a716b65215e232939d86854a987d9f1dba8d9aa9e51a5036bde524581e3d0ec46b} 
+MAX\+\_\+\+OFFSET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NUM\_TESTS@{NUM\_TESTS}!tests.c@{tests.c}}
+\index{tests.c@{tests.c}!NUM\_TESTS@{NUM\_TESTS}}
+}\Hypertarget{tests_8c_a716b65215e232939d86854a987d9f1dba6ed6cf3fa49ab4ed9ea20cd2b5d46170}\label{tests_8c_a716b65215e232939d86854a987d9f1dba6ed6cf3fa49ab4ed9ea20cd2b5d46170} 
+NUM\+\_\+\+TESTS&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-func-members}
+\Hypertarget{tests_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{tests_8c_a28a3256764465273a4937050c29f4bda}\index{tests.c@{tests.c}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!tests.c@{tests.c}}
+\doxysubsubsection{\texorpdfstring{encrypt()}{encrypt()}}
+{\footnotesize\ttfamily \label{tests_8c_a28a3256764465273a4937050c29f4bda} 
+void encrypt (\begin{DoxyParamCaption}\item[{char}]{message}{\+[$\,$]\+, }\item[{int}]{offset}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Core Caesar cipher shift function (used for both encryption and decryption). 
+
+
+\begin{DoxyItemize}
+\item Shifts alphabetical characters in the given message by the specified offset. It handles both uppercase and lowercase letters independently while leaving spaces, punctuation, and numbers untouched. It safely processes negative offsets and offsets greater than 26 using modulo arithmetic.
+\item 
+\begin{DoxyParams}{Parameters}
+{\em message} & The null-\/terminated string to be modified in-\/place. \\
+\hline
+{\em offset} & The number of positions to shift the characters (can be negative). \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\Hypertarget{tests_8c_a39abd40f68d03c40857be1e74407efb9}\index{tests.c@{tests.c}!red@{red}}
+\index{red@{red}!tests.c@{tests.c}}
+\doxysubsubsection{\texorpdfstring{red()}{red()}}
+{\footnotesize\ttfamily \label{tests_8c_a39abd40f68d03c40857be1e74407efb9} 
+void red (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{tests_8c_ad20897c5c8bd47f5d4005989bead0e55}\index{tests.c@{tests.c}!reset@{reset}}
+\index{reset@{reset}!tests.c@{tests.c}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily \label{tests_8c_ad20897c5c8bd47f5d4005989bead0e55} 
+void reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{tests_8c_a8cd0bfc09b2ad7021576958fd21a26ae}\index{tests.c@{tests.c}!run\_tests@{run\_tests}}
+\index{run\_tests@{run\_tests}!tests.c@{tests.c}}
+\doxysubsubsection{\texorpdfstring{run\_tests()}{run\_tests()}}
+{\footnotesize\ttfamily \label{tests_8c_a8cd0bfc09b2ad7021576958fd21a26ae} 
+void run\+\_\+tests (\begin{DoxyParamCaption}\item[{bool}]{verbose}{}\end{DoxyParamCaption})}
+
+\Hypertarget{tests_8c_a7e165eabf17ab214b721733d56b437aa}\index{tests.c@{tests.c}!runTest@{runTest}}
+\index{runTest@{runTest}!tests.c@{tests.c}}
+\doxysubsubsection{\texorpdfstring{runTest()}{runTest()}}
+{\footnotesize\ttfamily \label{tests_8c_a7e165eabf17ab214b721733d56b437aa} 
+unsigned int run\+Test (\begin{DoxyParamCaption}\item[{int}]{test}{, }\item[{bool}]{verbose}{}\end{DoxyParamCaption})}
+
+\Hypertarget{tests_8c_ac010f216462b153ec0fb7d53f4fa8a8d}\index{tests.c@{tests.c}!testName@{testName}}
+\index{testName@{testName}!tests.c@{tests.c}}
+\doxysubsubsection{\texorpdfstring{testName()}{testName()}}
+{\footnotesize\ttfamily \label{tests_8c_ac010f216462b153ec0fb7d53f4fa8a8d} 
+char \texorpdfstring{$\ast$}{*} test\+Name (\begin{DoxyParamCaption}\item[{int}]{test}{}\end{DoxyParamCaption})}
+

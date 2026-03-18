@@ -3,4 +3,5 @@ project(Caesar_Cipher C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(Caesar_Cipher main.c)
+add_executable(Caesar_Cipher main.c
+        tests.c)
