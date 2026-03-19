@@ -181,6 +181,7 @@ void print_menu() {
            "4. Decrypt a text with a known shift\n"
            "5. Compute and display the frequency distribution of a text\n"
            "6. Break the cipher\n"
+           "7. Break ciphers from a batch file\n"
            "0. Exit\n");
 }
 
@@ -366,6 +367,63 @@ void UI() {
                     printf("\nMost Plausible Decrypted Text (Shift %d):\n", top_shifts[0]);
                     printf("> %s\n\n", best_guess);
                 }
+                break;
+            }
+            case 7: {
+                printf("Enter file name: ");
+                char file_name[100];
+                scanf(" %99s", file_name);
+
+                char formatted_file_name[200] = "/Users/vlad/PersonalProjects/C/OOP/Extra/Caesar Cipher/";
+                strcat(formatted_file_name, file_name);
+                FILE* file = fopen(formatted_file_name, "r");
+
+                if (file == NULL) {
+                    printf("No such file!\n");
+                    break;
+                }
+
+                char line[1024];
+                int line_num = 1;
+
+                while (fgets(line, sizeof(line), file)) {
+                    line[strcspn(line, "\n")] = '\0';
+                    if (strlen(line) == 0) continue;
+                    char *last_comma = strrchr(line, ',');
+                    if (last_comma == NULL) {
+                        printf("\nLine %d: Invalid format. Expected 'text,metric'\n", line_num++);
+                        continue;
+                    }
+                    *last_comma = '\0';
+                    char *text = line;
+                    int metric = atoi(last_comma + 1);
+
+                    printf("\n--- Line %d | Metric: %d ---\n", line_num++, metric);
+                    printf("Ciphertext: %s\n", text);
+
+                    int top_shifts[TOP_N];
+                    double top_distances[TOP_N];
+
+                    if (metric == 1) {
+                        break_caesar_cipher(text, top_shifts, top_distances, chi_squared_distance);
+                    } else if (metric == 2) {
+                        break_caesar_cipher(text, top_shifts, top_distances, cosine_distance);
+                    } else if (metric == 3) {
+                        break_caesar_cipher(text, top_shifts, top_distances, euclidean_distance);
+                    } else {
+                        printf("Invalid metric number (%d) on this line!\n", metric);
+                        continue;
+                    }
+
+                    if (top_shifts[0] != -1) {
+                        char best_guess[1000];
+                        strcpy(best_guess, text);
+                        decrypt_with_shift(best_guess, top_shifts[0]);
+                        printf("Best Shift: %d (Score: %.4f)\n", top_shifts[0], top_distances[0]);
+                        printf("Decrypted:  %s\n", best_guess);
+                    }
+                }
+                fclose(file);
                 break;
             }
             case 0:
