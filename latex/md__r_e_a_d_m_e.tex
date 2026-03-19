@@ -1,0 +1,51 @@
+\chapter{README }
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{README@{README}}
+{\bfseries{A comprehensive C utility for encrypting, decrypting, and computationally breaking Caesar Ciphers.}}
+
+This program allows users to manipulate text using standard Caesar shifts and utilizes advanced frequency analysis to break unknown ciphers automatically. It features a fully interactive command-\/line interface (CLI) and supports three different statistical distance metrics to compare letter distributions.
+
+{\bfseries{✨ Features}} Interactive CLI Menu
+
+{\bfseries{Encrypt/\+\+Decrypt}}:\+ Shift alphabetical characters by any positive or negative offset while preserving spaces, punctuation, and numbers.
+
+{\bfseries{File I/\+O}}:\+ Read input texts directly from the keyboard or from local text files.
+
+{\bfseries{Frequency Distribution}}:\+ Compute and display the normalized letter frequency of any given text.
+
+{\bfseries{Automated Cipher Breaking}}:\+ Uses standard English letter distributions (distribution.\+txt) to computationally guess the shift of an unknown encrypted text.
+
+{\bfseries{📊 Caesar Cipher Cryptanalysis:\+ Performance Report}}
+
+
+\begin{DoxyEnumerate}
+\item The Impact of Text Length (Short vs. Long Texts) The length of the encrypted string is the single most significant factor in decryption accuracy. Long Texts (200+ characters):\+ All three methods (Chi-\/\+Squared, Cosine, and Euclidean) perform exceptionally well. When the sample size is large, the shifts are almost always decrypted perfectly on the first guess.
+
+Short Texts (10-\/20 characters):\+Short texts rarely contain a perfect distribution of the English alphabet. In these cases, Chi-\/\+Squared proves to be the most resilient. Euclidean distance frequently fails on short texts because it calculates raw geometric distance, which is easily skewed by small sample sizes.
+\item The Impact of Letter Distribution \& Anomalies Standard frequency analysis assumes that the encrypted text is "{}normal"{} English. When testing texts with highly unusual letter frequencies (such as lipograms with no \textquotesingle{}E\textquotesingle{} or \textquotesingle{}T\textquotesingle{}, or sentences like "{}pizza jazz buzz fuzz"{} from the test data), the accuracy drops drastically.
+\end{DoxyEnumerate}
+
+Why it happens:\+ If a text happens to have five \textquotesingle{}Z\textquotesingle{}s and zero \textquotesingle{}E\textquotesingle{}s, the statistical profile looks entirely alien. The algorithm will try to shift the text so that the \textquotesingle{}Z\textquotesingle{}s align with the \textquotesingle{}E\textquotesingle{} slot in the standard distribution, resulting in a completely incorrect shift (a "{}false positive"{}).
+
+Method Comparison:\+ Cosine Distance actually handles these anomalous distributions slightly better than Euclidean distance because it measures the angle between the frequency vectors rather than the absolute magnitude, making it slightly more forgiving of exact frequency spikes. However, all metrics struggle significantly if the most common English letters are artificially missing.
+
+
+\begin{DoxyEnumerate}
+\item Errors, Edge Cases, and Failures During testing, the program reliably selects the wrong shift under specific edge cases:\+
+\end{DoxyEnumerate}
+
+The "{}\+Single Character"{} or "{}\+Too Short"{} Anomaly:\+ If the text is a single word (e.\+g., "{}\+Hello"{}) or a single character (e.\+g., "{}\+A"{}), frequency analysis completely breaks down. A string of length 1 has a 100\% frequency of one letter, making it mathematically impossible to compare to standard English.
+
+Highly Repetitive Patterns:\+ Texts like "{}\+Eeeeeeeee"{} or repeating acronyms confuse the metrics. The algorithm assumes the highest frequency letter must be \textquotesingle{}E\textquotesingle{}, \textquotesingle{}T\textquotesingle{}, or \textquotesingle{}A\textquotesingle{}, and will force a shift to match that, regardless of the actual word.
+
+Acronyms and Passwords:\+ Strings like "{}\+CRYPTOGRAPHY"{} or "{}1234567890 !@\+\#"{} are immune to frequency analysis because they lack standard grammatical filler words (the, and, is) that usually ground the statistical distribution.
+
+
+\begin{DoxyEnumerate}
+\item Summary and Final Verdict After evaluating the decryption of multiple ciphertexts across varying lengths and distributions, the methods rank as follows:\+
+\end{DoxyEnumerate}
+
+🏆 Chi-\/\+Squared Distance (Most Effective):\+ This is the most accurate overall metric. It works best because of how it handles weights:\+ it penalizes the absence of highly expected letters (like \textquotesingle{}E\textquotesingle{}) much more heavily than the absence of rare letters (like \textquotesingle{}Z\textquotesingle{}). This weighting system makes it the most robust choice for texts of all lengths.
+
+📈 Cosine Distance (Strong Runner-\/\+Up):\+ Highly effective for long texts and relatively stable. Because it evaluates the "{}shape"{} of the data rather than raw numbers, it is a solid mathematical alternative but occasionally loses to Chi-\/\+Squared on shorter, choppy sentences.
+
+⚠️ Euclidean Distance (Least Effective):\+ The weakest of the three. It treats a 2\% deviation in \textquotesingle{}E\textquotesingle{} exactly the same as a 2\% deviation in \textquotesingle{}Z\textquotesingle{}. Because it does not weight the importance of common English letters, it is highly fragile and easily confused by short texts or slight anomalies. 
