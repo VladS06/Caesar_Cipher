@@ -143,7 +143,7 @@ void break_caesar_cipher(const char* text, int top_shifts[TOP_N], double top_dis
     }
 
     double* distribution = (double*)malloc(26 * sizeof(double));
-    read_distribution("/Users/vlad/PersonalProjects/C/OOP/Extra/Caesar Cipher/distribution.txt", distribution);
+    read_distribution("./distribution.txt", distribution);
 
     double* histogram = calloc(26, sizeof(double));
     double test_histogram[26];
@@ -202,8 +202,8 @@ void read_text_from_keyboard(char * str) {
  * @param filename The name of the file to read from.
  */
 void read_text_from_file(char * str, const char * filename) {
-    char formatted_file_name[200] = "/Users/vlad/PersonalProjects/C/OOP/Extra/Caesar Cipher/";
-    strcat(formatted_file_name, filename);
+    char formatted_file_name[200];
+    snprintf(formatted_file_name, sizeof(formatted_file_name), "./%s", filename);
     FILE* file = fopen(formatted_file_name, "r");
     if (file != NULL) {
         fgets(str, 1000, file);
@@ -374,8 +374,8 @@ void UI() {
                 char file_name[100];
                 scanf(" %99s", file_name);
 
-                char formatted_file_name[200] = "/Users/vlad/PersonalProjects/C/OOP/Extra/Caesar Cipher/";
-                strcat(formatted_file_name, file_name);
+                char formatted_file_name[200];
+                snprintf(formatted_file_name, sizeof(formatted_file_name), "./%s", file_name);
                 FILE* file = fopen(formatted_file_name, "r");
 
                 if (file == NULL) {
